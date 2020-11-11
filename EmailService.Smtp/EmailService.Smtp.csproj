@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <PackageId>NidamTech.EmailService.Smtp</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Nikolai Emil Damm</Authors>
+    <PackageDescription>An extension for NidamTech.EmailService, to support Smtp.</PackageDescription>
+    <RepositoryUrl>https://github.com/niem94/dotnet-email-service</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
+    </ItemGroup>
+
+</Project>
