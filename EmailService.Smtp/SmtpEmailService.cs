@@ -1,17 +1,16 @@
 ﻿using System.Net.Mail;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
-using EmailService.Models;
 
 namespace EmailService.Smtp
 {
-    public class SmtpEmailService : EmailService<SmtpSettings>
+    public class SmtpEmailService : EmailService<SmtpOptions>
     {
         public SmtpClient SmtpClient { get; set; }
 
-        protected SmtpEmailService(IOptions<SmtpSettings> options) : base(options)
+        protected SmtpEmailService(IOptions<SmtpOptions> options) : base(options)
         {
-            SmtpClient = new SmtpClient(Settings.Host, Settings.Port);
+            SmtpClient = new SmtpClient(Options.Host, Options.Port);
         }
         public override async Task SendEmailAsync(EmailMessage message)
         {
@@ -24,7 +23,7 @@ namespace EmailService.Smtp
             };
             mailMessage.To.Add(new MailAddress(message.ToAddress, message.ToName));
             SmtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-            SmtpClient.UseDefaultCredentials = Settings.UseDefaultCredentials;
+            SmtpClient.UseDefaultCredentials = Options.UseDefaultCredentials;
             await SmtpClient.SendMailAsync(mailMessage).ConfigureAwait(false);
             SmtpClient.Dispose();
         }

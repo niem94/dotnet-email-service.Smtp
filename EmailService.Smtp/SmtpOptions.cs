@@ -1,6 +1,6 @@
 ﻿namespace EmailService.Smtp
 {
-    public class SmtpOptions : ProviderSettings
+    public class SmtpOptions : ProviderOptions
     {
         public string Host { get; set; } = "";
         public string Username { get; set; } = "";
