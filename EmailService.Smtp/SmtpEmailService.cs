@@ -17,7 +17,7 @@ namespace EmailService.Smtp
         {
             MailMessage mailMessage = new MailMessage
             {
-                From = new MailAddress(message.FromAdress, message.FromName),
+                From = new MailAddress(message.FromAddress, message.FromName),
                 IsBodyHtml = message.IsHtml,
                 Subject = message.Subject,
                 Body = message.Body
