@@ -1,7 +1,7 @@
 ﻿using System.Net.Mail;
 using System.Threading.Tasks;
-using EmailService.Models;
 using Microsoft.Extensions.Options;
+using EmailService.Models;
 
 namespace EmailService.Smtp
 {
