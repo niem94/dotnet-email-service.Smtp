@@ -8,7 +8,7 @@ namespace EmailService.Smtp
     {
         public SmtpClient SmtpClient { get; set; }
 
-        protected SmtpEmailService(IOptions<SmtpOptions> options) : base(options)
+        public SmtpEmailService(IOptions<SmtpOptions> options) : base(options)
         {
             SmtpClient = new SmtpClient(Options.Host, Options.Port);
         }

@@ -1,5 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using System;
 
 namespace EmailService.Smtp
@@ -10,13 +10,6 @@ namespace EmailService.Smtp
                    Action<SmtpOptions> options)
         {
             services.Configure(options);
-            services.AddTransient<IEmailService, SmtpEmailService>();
-        }
-
-        public static void AddSmtpEmailService(this IServiceCollection services,
-                   SmtpOptions options)
-        {
-            services.ConfigureOptions(options);
             services.AddTransient<IEmailService, SmtpEmailService>();
         }
     }
