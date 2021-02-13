@@ -1,6 +1,5 @@
 using Microsoft.Extensions.Options;
 using Xunit;
-using Moq;
 
 namespace EmailService.Smtp.Tests
 {
@@ -10,7 +9,7 @@ namespace EmailService.Smtp.Tests
         [Fact]
         public void SmtpEmailService_Can_Construct()
         {
-            SmtpEmailService smtpEmailService = new SmtpEmailService(options);
+            SmtpEmailService smtpEmailService = new(options);
 
             TestClientDefaultValues(smtpEmailService);
             TestOptionsDefaultValues(smtpEmailService);
@@ -37,7 +36,7 @@ namespace EmailService.Smtp.Tests
         [Fact]
         public void SendEmailAsync_Sends_Email()
         {
-            SmtpEmailService smtpEmailService = new SmtpEmailService(options);
+            SmtpEmailService smtpEmailService = new(options);
             //TODO: Finish this test
         }
     }
